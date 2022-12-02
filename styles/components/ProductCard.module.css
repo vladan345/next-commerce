@@ -1,0 +1,26 @@
+.ProductCard {
+  background: #f7f7f7;
+  border-radius: 10px;
+  color: #202020;
+  transition: 0.3s;
+}
+.ProductCard:hover {
+  transform: scale(1.05);
+}
+.thumbnail {
+  position: relative;
+  height: 300px;
+}
+.thumbnail img {
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.namePrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px;
+}
+.name {
+  font-size: 16px;
+}
