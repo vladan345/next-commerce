@@ -8,7 +8,12 @@ const nextConfig = {
       process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN,
   },
   images: {
-    domains: ["tailwindui.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
 };
 

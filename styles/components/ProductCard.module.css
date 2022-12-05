@@ -1,11 +1,13 @@
 .ProductCard {
-  background: #f7f7f7;
+  background: transparent;
   border-radius: 10px;
-  color: #202020;
+  color: #f7f7f7;
   transition: 0.3s;
+  border: 1px solid #ffffff;
 }
 .ProductCard:hover {
-  transform: scale(1.05);
+  border: 1px solid #0070f3;
+  color: #0070f3;
 }
 .thumbnail {
   position: relative;

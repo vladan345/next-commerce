@@ -5,3 +5,8 @@
   width: 100%;
   max-width: 1300px;
 }
+@media (max-width: 1260px) {
+  .ProductList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

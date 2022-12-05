@@ -3,10 +3,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import ProductList from "../components/ProductList";
-import { storefront } from "../utils/index";
+import { getAllProducts } from "../utils/index";
 
-function Home({ posts }) {
-  console.log(posts);
+function Home({ products }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -56,7 +55,7 @@ function Home({ posts }) {
             </p>
           </a>
         </div>
-        <ProductList />
+        <ProductList products={products} />
       </main>
 
       <footer className={styles.footer}>
@@ -74,35 +73,12 @@ function Home({ posts }) {
     </div>
   );
 }
-
 export async function getStaticProps() {
-  let a = storefront().then((data) => data);
-  console.log(a);
-  const { data } = await storefront(productsQuery).then((data) => data);
-  console.log(data);
+  const products = await getAllProducts();
+
   return {
-    props: {
-      products: data,
-    },
+    props: { products }, // will be passed to the page component as props
   };
 }
-
-const productsQuery = `
-  {
-    products(first: 4) {
-      nodes {
-        title
-        priceRange {
-          maxVariantPrice {
-            amount
-          }
-        }
-        featuredImage {
-          url
-        }
-      }
-    }
-  }
-`;
 
 export default Home;
